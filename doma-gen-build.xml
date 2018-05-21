@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="doma-gen-example" default="gen" basedir=".">
+	<!-- javaDestDir -->
+	<property name="javaDestDir" value="src"/>
+	
+	<!-- sqlDestDir -->
+	<property name="sqlDestDir" value="src"/>
+	
+	<!-- dialectName -->
+	<property name="dialectName" value="mysql"/>
+	
+	<!-- driverClassName -->
+	<property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+	<property name="url" value="jdbc:mysql://localhost:3306/test"/>
+	<property name="user" value="root"/>
+	<property name="password" value="hogehoge"/>
+	
+	<!-- package -->
+	<property name="entityPackageName" value="com.zac.server.db.entity"/>
+	<property name="daoPackageName" value="com.zac.server.db.dao"/>
+	
+	
+	<property name="configClassName" value="com.zac.server.db.config.AppConfig"/>
+	<property name="sqlTestClassName" value="com.zac.server.db.SqlTest"/>
+	<property name="sqlFilePattern" value="META-INF/**/*.sql"/>
+	
+	<path id="classpath">
+		<fileset dir="./lib" includes="*.jar"/>
+	</path>
+
+	<taskdef name="gen" classname="org.seasar.doma.extension.gen.task.Gen" classpathref="classpath" loaderref="loader"/>
+	<typedef name="entityConfig" classname="org.seasar.doma.extension.gen.task.EntityConfig" loaderref="loader"/>
+	<typedef name="daoConfig" classname="org.seasar.doma.extension.gen.task.DaoConfig" loaderref="loader"/>
+	<typedef name="sqlConfig" classname="org.seasar.doma.extension.gen.task.SqlConfig" loaderref="loader"/>
+	
+	<target name="gen">
+		<gen
+			dialectName="${dialectName}"
+			driverClassName="${driverClassName}"
+			url="${url}"
+			user="${user}"
+			password="${password}">
+			<entityConfig
+				destdir="${javaDestDir}"
+				packageName="${entityPackageName}"
+			/>
+			<daoConfig
+				destdir="${javaDestDir}"
+				packageName="${daoPackageName}"
+				configClassName="${configClassName}"
+			/>
+			<sqlConfig
+				destdir="${sqlDestDir}"
+			/>
+		</gen>
+	</target>
+
+	<target name="genTest">
+		<genTest
+			dialectName="${dialectName}"
+			driverClassName="${driverClassName}"
+			url="${url}"
+			user="${user}"
+			password="${password}">
+			<sqlTestConfig
+				destdir="${javaDestDir}"
+				testClassName="${sqlTestClassName}">
+				<fileset dir="${sqlDestDir}">
+					<include name="${sqlFilePattern}"/>
+				</fileset>
+			</sqlTestConfig>
+		</genTest>
+	</target>
+
+</project>
