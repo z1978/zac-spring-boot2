@@ -61,8 +61,8 @@ gradle-wrapper.properties
 distributionUrl=https\://services.gradle.org/distributions/gradle-4.6-bin.zip
 ----------------------------------------------------------------------------------------------------
 
-
-
+Doma利用時にエラー[DOMA4019]が発生したときの対処法
+https://qiita.com/nesheep5/items/37bd1913211fcf3aebf1
 
 spring boot サンプル
 https://qiita.com/rubytomato@github/items/e4fda26faddbcfd84d16

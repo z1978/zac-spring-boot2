@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="doma-gen-example" default="gen" basedir=".">
 	<!-- javaDestDir -->
-	<property name="javaDestDir" value="src"/>
+	<property name="javaDestDir" value="src/main/java"/>
 	
 	<!-- sqlDestDir -->
-	<property name="sqlDestDir" value="src"/>
+	<property name="sqlDestDir" value="src/main/resources"/>
 	
 	<!-- dialectName -->
 	<property name="dialectName" value="mysql"/>
 	
 	<!-- driverClassName -->
 	<property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-	<property name="url" value="jdbc:mysql://localhost:3306/test"/>
+	<property name="url" value="jdbc:mysql://localhost:3306/sample_db"/>
 	<property name="user" value="root"/>
 	<property name="password" value="hogehoge"/>
 	
@@ -22,7 +22,7 @@
 	
 	<property name="configClassName" value="com.zac.server.db.config.AppConfig"/>
 	<property name="sqlTestClassName" value="com.zac.server.db.SqlTest"/>
-	<property name="sqlFilePattern" value="META-INF/**/*.sql"/>
+	<property name="sqlFilePattern" value="src/main/resources/META-INF/**/*.sql"/>
 	
 	<path id="classpath">
 		<fileset dir="./lib" includes="*.jar"/>

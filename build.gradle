@@ -54,8 +54,11 @@ dependencies {
   compile('org.springframework.boot:spring-boot-starter-mail')
   compile('org.springframework.boot:spring-boot-starter-thymeleaf')
   compile('org.springframework.boot:spring-boot-starter-web')
+  compile("org.springframework.boot:spring-boot-starter-freemarker")
   compile('org.springframework.boot:spring-boot-starter-actuator')
   compile('org.seasar.doma.boot:doma-spring-boot-starter:1.1.1')
+  compile group: 'org.seasar.doma', name: 'doma', version: '2.0.1'
+  compile group: 'org.seasar.doma', name: 'doma-gen', version: '2.0.1'
   compile("org.springframework.boot:spring-boot-devtools")
   compile("org.springframework.boot:spring-boot-starter-logging")
   compile('mysql:mysql-connector-java:5.1.41')
