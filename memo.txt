@@ -26,7 +26,11 @@ gradle clean compileJava
 
 doma-gen-build.xml
 右クリック⇒Run As⇒Ant Build
-
+下記jarはlibにあることが確認してください
+https://mvnrepository.com/artifact/org.seasar.doma/doma/2.19.0
+https://mvnrepository.com/artifact/org.seasar.doma/doma-gen/2.19.0
+https://mvnrepository.com/artifact/org.freemarker/freemarker/2.3.28
+https://mvnrepository.com/artifact/mysql/mysql-connector-java/8.0.11
 
 STSにプロジェクトをインポート
 workspace直下にgit clone。リポジトリ：https://github.com/z1978/zac-spring-boot.git
